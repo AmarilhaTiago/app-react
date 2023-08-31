@@ -1,25 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import Banner from './components/Banner/banner';
-
+import Banner from "./components/Banner";
+import Form from "./components/Form";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Banner/>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Amarilha's React App
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Banner />
+      <Form />
     </div>
   );
 }
