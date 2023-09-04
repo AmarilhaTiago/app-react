@@ -6,16 +6,6 @@ import { useState } from 'react';
 
 export const  Form = (props) => {
 
-  const teams = [
-    'Programação',
-    'Front-End',
-    'Data-Science',
-    'DevOps',
-    'Ux e Design',
-    'Mobile',
-    'Inovação e Gestão',
-  ]
-
   const [name, setName] = useState("");
   const [cargo, setCargo] = useState("");
   const [image, setImage] = useState("");
@@ -23,13 +13,17 @@ export const  Form = (props) => {
 
   const onSave = (e) => {
     e.preventDefault();
-    console.log("form sended", name, cargo, image, team);
+    // console.log("form sended", name, cargo, image, team);
     props.registerEmployee({
       name: name, 
       cargo: cargo, 
       image: image, 
       team: team,
     });
+    setName("")
+    setCargo("")
+    setImage("")
+    setTeam("")
   }
   
   return (
@@ -59,8 +53,9 @@ export const  Form = (props) => {
         <Dropdown 
         obrigatory={true} 
         label="Time" 
-        items={teams}
+        items={props.teams}
         val={team}
+        placeholder="Selecione seu time"
         onChangex={val => setTeam(val)}
         />
         <Button>

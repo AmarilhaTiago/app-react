@@ -45,15 +45,21 @@ function App() {
   const [employees, setEmployees] = useState([]);
 
   const onNewEmployee = (employee) => {
-    console.log(employee)
+    debugger
     setEmployees([...employees, employee])
   }
 
   return (
     <div className="App">
       <Banner />
-      <Form registerEmployee={employee => onNewEmployee(employee)}/>
-      {teams.map(team => <Team key={team.name} name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor}/>)}
+      <Form teams={teams.map(team => team.name)} registerEmployee={employee => onNewEmployee(employee)}/>
+      {teams.map(team => <Team 
+      key={team.name} 
+      name={team.name} 
+      primaryColor={team.primaryColor} 
+      secondaryColor={team.secondaryColor}
+      employees={employees.filter(employee => employee.team === team.name)}
+      />)}
 
     </div>
   );
