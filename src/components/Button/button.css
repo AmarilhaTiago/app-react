@@ -1,0 +1,16 @@
+.button-container button{
+    background-color: #6278F7;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 25px;
+    border: none;
+    cursor: pointer;
+    color: #FFF;
+    transition: all 0.2s ease-in-out;
+    margin: 32px 0;
+}
+
+.button-container button:hover{
+    color: #95FFD4;
+}
